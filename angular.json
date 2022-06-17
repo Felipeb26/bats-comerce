@@ -58,6 +58,7 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
+            "baseHref": "https://felipeb26.github.io/bats-comerce/",
             "scripts": []
           },
           "configurations": {

@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --port 4200 && npm start json-server db.json --port 3001",
     "watch": "ng build --watch --configuration development",
-    "build": "ng build"
+    "build": "ng build --base-href https://felipeb26.github.io/bats-comerce/"
   },
   "private": true,
   "homepage": "https://felipeb26.github.io/bats-comerce/",
