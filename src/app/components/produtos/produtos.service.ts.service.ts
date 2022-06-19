@@ -5,41 +5,41 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: "root",
 })
 export class ProdutosService {
-  baseUrl = "http://localhost:3001/produtos";
+	baseUrl =
+		"http://my-json-server.typicode.com/felipeb26/bats-comerce/produtos";
+	constructor(private snacbar: MatSnackBar, private http: HttpClient) {}
 
-  constructor(private snacbar: MatSnackBar, private http:HttpClient) { }
+	showMessage(msg: string): void {
+		this.snacbar.open(msg, "X", {
+			duration: 3000,
+			verticalPosition: "top",
+			horizontalPosition: "right",
+		});
+	}
 
-  showMessage(msg:string): void{
-    this.snacbar.open(msg, 'X',{
-      duration: 3000,
-      verticalPosition: 'top',
-      horizontalPosition: 'right'
-    })
-  }
+	create(produto: Produtos): Observable<Produtos> {
+		return this.http.post<Produtos>(this.baseUrl, produto);
+	}
 
-  create(produto:Produtos): Observable<Produtos>{
-    return this.http.post<Produtos>(this.baseUrl, produto);
-  }
+	read(): Observable<Produtos[]> {
+		return this.http.get<Produtos[]>(this.baseUrl);
+	}
 
-  read(): Observable<Produtos[]>{
-    return this.http.get<Produtos[]>(this.baseUrl)
-  }
+	readById(id: string): Observable<Produtos> {
+		const url = `${this.baseUrl}/${id}`;
+		return this.http.get<Produtos>(url);
+	}
 
-  readById(id:string): Observable<Produtos>{
-    const url = `${this.baseUrl}/${id}`
-    return this.http.get<Produtos>(url)
-  }
-  
-  update(produto:Produtos): Observable<Produtos>{
-    const url = `${this.baseUrl}/${produto.id}`;
-    return this.http.put<Produtos>(url,produto);
-  }
-  
-  delete(produto:Produtos): Observable<Produtos>{
-    const url = `${this.baseUrl}/${produto.id}`;
-    return this.http.delete<Produtos>(url);
-  }
+	update(produto: Produtos): Observable<Produtos> {
+		const url = `${this.baseUrl}/${produto.id}`;
+		return this.http.put<Produtos>(url, produto);
+	}
+
+	delete(produto: Produtos): Observable<Produtos> {
+		const url = `${this.baseUrl}/${produto.id}`;
+		return this.http.delete<Produtos>(url);
+	}
 }

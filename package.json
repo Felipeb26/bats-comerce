@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start" :"yarn begin && yarn db",
-    "begin": "ng serve --port 4200 -o",
+    "begin": "ng serve --port 4200",
     "watch": "ng build --watch --configuration development",
     "build": "ng build --base-href https://felipeb26.github.io/bats-comerce/",
     "db" : "json-server db.json --port 3001"
