@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ProdutosService {
 	baseUrl =
-		"http://my-json-server.typicode.com/felipeb26/bats-comerce/produtos";
+		"https://my-json-server.typicode.com/felipeb26/bats-comerce/produtos";
 	constructor(private snacbar: MatSnackBar, private http: HttpClient) {}
 
 	showMessage(msg: string): void {
