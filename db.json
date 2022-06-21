@@ -4,6 +4,27 @@
       "nome": "macbook",
       "price": "2500",
       "id": 1
+    },
+    {
+      "nome": "positivo",
+      "price": "2500",
+      "id": 2
+    },
+    {
+      "nome": "acer nitro 5",
+      "price": "2500",
+      "id": 3
+    }
+    ,
+    {
+      "nome": "dell inspiron",
+      "price": "2500",
+      "id": 4
+    },
+    {
+      "nome": "lenovo s145",
+      "price": "2500",
+      "id": 5
     }
   ]
 }
