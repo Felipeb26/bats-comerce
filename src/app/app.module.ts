@@ -31,6 +31,8 @@ import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
 import { ProdUpdateComponent } from './components/produtos/prod-update/prod-update.component';
 import { ProdDeleteComponent } from './components/produtos/prod-delete/prod-delete.component';
+import { CreateLoginComponent } from './account'
+import { AuthenticationComponent } from './components/auth/authentication/authentication.component';
 
 registerLocaleData(localePt);
 
@@ -45,7 +47,9 @@ registerLocaleData(localePt);
     ProdCreateComponent,
     ProdReadComponent,
     ProdUpdateComponent,
-    ProdDeleteComponent
+    ProdDeleteComponent,
+    CreateLoginComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
