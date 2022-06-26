@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"yarn begin\" \"yarn db\"",
+    "start": "concurrently --kill-others \"yarn db\" \"yarn begin\"",
     "begin": "ng serve --port 4200",
     "watch": "ng build --watch --configuration development",
     "build": "ng build --base-href https://felipeb26.github.io/bats-comerce/",

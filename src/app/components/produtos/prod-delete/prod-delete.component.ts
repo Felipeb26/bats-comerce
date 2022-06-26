@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Produtos } from '../produto.model';
-import { ProdutosService } from '../produtos.service.ts.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Produtos } from "../produto.model";
+import { ProdutosService } from "../produtos.service.ts.service";
 
 @Component({
 	selector: "app-prod-delete",
@@ -25,7 +25,7 @@ export class ProdDeleteComponent implements OnInit {
 	}
 
 	deleteProduto(): void {
-		  this.prodService.delete(this.produto).subscribe(() => {
+		this.prodService.delete(this.produto).subscribe(() => {
 			this.prodService.showMessage("produto excluido com sucesso!");
 			this.route.navigate(["/produtos"]);
 		});

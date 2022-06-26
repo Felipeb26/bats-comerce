@@ -1,17 +1,51 @@
 <mat-card>
-    <mat-card-title>Novo Produto</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="nome" [(ngModel)]="produto.nome!" name="nome">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="preço (R$)" [(ngModel)]="produto.price" name="price">
-        </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="updateProduto()" color="primary">
-        salvar    
-    </button>
-    <button mat-raised-button (click)="cancel()">
-        cancelar    
-    </button>
+	<mat-card-title>Atualizar {{produto.nome}}</mat-card-title>
+	<div class="updateDiv">
+		<form [formGroup]="momentForm" #form="ngForm">
+			<mat-form-field class="form-griup">
+				<input
+					matInput
+					placeholder="nome"
+					value="{{produto.nome}}"
+					name="nome"
+				/>
+			</mat-form-field>
+			<mat-form-field>
+				<input
+					matInput
+					type="text"
+					class="form-control"
+					placeholder="preço (R$)"
+					id="price"
+					value="{{produto.price}}"
+					name="price"
+				/>
+			</mat-form-field>
+			<input
+				class="inputImage"
+				type="file"
+				accept="image/*"
+				(change)="onChange($event)"
+				id="inputImg"
+				name="image"
+			/>
+			<label id="lblArquivo" for="inputImg"
+				>escolher imagem do produto</label
+			>
+		</form>
+		<mat-card class="preview" *ngIf="url && url !== ''">
+			<img
+				[src]="url"
+				[(ngModel)]="produto.image"
+				name="image"
+				alt="imagem aqui"
+			/>
+		</mat-card>
+	</div>
+	<div class="btnsUpdate">
+		<button mat-raised-button (click)="updateProduto()" color="primary">
+			salvar
+		</button>
+		<button mat-raised-button (click)="cancel()">cancelar</button>
+	</div>
 </mat-card>

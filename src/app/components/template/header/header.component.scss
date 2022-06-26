@@ -1,14 +1,18 @@
 .header{
     display: flex;
     height: 5rem;
-    background: #373737;
-    color: #ffffff;
+    background: var(--myBlack);
+    color: var(--myWhite);
     & a{
         display: flex;
         align-items: center;
     }
     & .logo{
         max-height: 4rem;
+    }
+    & .logo:hover{
+        transition: ease-in-out 0.5s;
+        filter: drop-shadow(0 0 1.5rem var(--myMidRed));
     }
 }
 .title-group {

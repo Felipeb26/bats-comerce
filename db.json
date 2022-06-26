@@ -2,27 +2,19 @@
   "produtos": [
     {
       "nome": "macbook",
-      "price": "2500",
+      "imagem": "",
+      "price": "3500",
       "id": 1
     },
     {
-      "nome": "positivo",
-      "price": "2500",
-      "id": 2
-    },
-    {
-      "nome": "acer nitro 5",
-      "price": "2500",
-      "id": 3
-    }
-    ,
-    {
       "nome": "dell inspiron",
+      "imagem": "",
       "price": "2500",
       "id": 4
     },
     {
       "nome": "lenovo s145",
+      "imagem": "",
       "price": "2500",
       "id": 5
     }

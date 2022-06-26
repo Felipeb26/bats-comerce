@@ -12,4 +12,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  outOrIn():void{
+    const token = localStorage.getItem('token')
+    if(token != null){
+      localStorage.clear()
+    }
+  } 
 }

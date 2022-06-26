@@ -1,9 +1,8 @@
 .sidenav{
-    height: 100%;
-    background: #b53f3f;
+    background: var(--myDarkRed);
     width: 10rem;
     & a{
-        color: whitesmoke;
+        color: var(--myWhite);
     }
     & i{
         padding: 0 1rem 0 0;
@@ -11,5 +10,5 @@
 }
 .content{
     padding: 1rem;
-    background: #fff;
+    background: var(--myWhite);
 }
