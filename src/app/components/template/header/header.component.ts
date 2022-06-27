@@ -1,3 +1,4 @@
+import { NavComponent } from './../nav/nav.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

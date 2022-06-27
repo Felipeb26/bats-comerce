@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   constructor() { }
+  opened = false;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   outOrIn():void{
     const token = localStorage.getItem('token')
