@@ -1,7 +1,7 @@
 <mat-card>
 	<mat-card-title>Atualizar {{produto.nome}}</mat-card-title>
 	<div class="updateDiv">
-		<form [formGroup]="momentForm" #form="ngForm">
+		<form>
 			<mat-form-field class="form-griup">
 				<input
 					matInput
@@ -36,7 +36,6 @@
 		<mat-card class="preview" *ngIf="url && url !== ''">
 			<img
 				[src]="url"
-				[(ngModel)]="produto.image"
 				name="image"
 				alt="imagem aqui"
 			/>

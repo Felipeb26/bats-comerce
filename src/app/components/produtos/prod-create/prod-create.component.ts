@@ -4,31 +4,39 @@ import { Component, OnInit } from '@angular/core';
 import { Produtos } from '../produto.model';
 
 @Component({
-  selector: 'app-prod-create',
-  templateUrl: './prod-create.component.html',
-  styleUrls: ['./prod-create.component.scss']
+	selector: "app-prod-create",
+	templateUrl: "./prod-create.component.html",
+	styleUrls: ["./prod-create.component.scss"],
 })
 export class ProdCreateComponent implements OnInit {
+	produto: Produtos = {
+		nome: "",
+		price: 0,
+		image: "",
+	};
+	url:string = "assets/img/logo.png"
 
-  produto: Produtos = {
-    nome: '',
-    price: 0,
-    image: ''
-  }
+	constructor(private prodService: ProdutosService, private router: Router) {}
 
-  constructor(private prodService:ProdutosService,
-    private router: Router) { }
+	ngOnInit(): void {}
 
-  ngOnInit(): void { 
-  }
-  
-  createProduct(): void{
-    this.prodService.create(this.produto).subscribe(() => {
-      this.prodService.showMessage("Produto criado com sucesso!");
-      this.router.navigate(['/produtos'])
-    })
-  }
-  cancel():void{
-    this.router.navigate(['/produtos']);
-  }
+	onChange(event: any) {
+		const files = <FileList>event.srcElement.files;
+		const reader = new FileReader();
+		reader.onload = () => {
+			this.url = reader.result as string;
+			this.produto.image = reader.result as string
+		};
+		reader.readAsDataURL(files[0]);
+	}
+
+	createProduct(): void {
+		this.prodService.create(this.produto).subscribe(() => {
+			this.prodService.showMessage("Produto criado com sucesso!");
+			this.router.navigate(["/produtos"]);
+		});
+	}
+	cancel(): void {
+		this.router.navigate(["/produtos"]);
+	}
 }

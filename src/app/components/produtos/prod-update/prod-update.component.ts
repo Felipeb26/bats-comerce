@@ -2,7 +2,6 @@ import { Produtos } from './../produto.model';
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProdutosService } from "./../produtos.service.ts.service";
-import { FormGroup } from '@angular/forms';
 
 @Component({
 	selector: "app-prod-update",
@@ -11,8 +10,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProdUpdateComponent implements OnInit {
 	produto!: Produtos;
-	momentForm!: FormGroup;
-	url: string = "";
+	url: any = "";
 
 	constructor(
 		private route: Router,
@@ -24,6 +22,7 @@ export class ProdUpdateComponent implements OnInit {
 		const id = this.router.snapshot.paramMap.get("id");
 		this.prodService.readById(id!).subscribe((produto) => {
 			this.produto = produto;
+			this.url = this.produto.image;
 		});
 	}
 
