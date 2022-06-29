@@ -10,7 +10,11 @@ import { DataUrl, NgxImageCompressService } from "ngx-image-compress";
 	styleUrls: ["./prod-update.component.scss"],
 })
 export class ProdUpdateComponent implements OnInit {
-	produto!: Produtos;
+	produto: Produtos = {
+		nome: '',
+		price: 0,
+		image: ''
+	};
 	url: DataUrl = "";
 
 	constructor(

@@ -9,7 +9,11 @@ import { ProdutosService } from "../produtos.service.ts.service";
 	styleUrls: ["./prod-delete.component.scss"],
 })
 export class ProdDeleteComponent implements OnInit {
-	produto!: Produtos;
+	produto: Produtos = {
+		nome: "",
+		price: 0,
+		image: "",
+	};
 
 	constructor(
 		private route: Router,
