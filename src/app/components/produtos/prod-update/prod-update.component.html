@@ -15,9 +15,9 @@
 					matInput
 					type="text"
 					class="form-control"
+					suffix="$"
 					placeholder="preço (R$)"
-					id="price"
-					value="{{produto.price}}"
+					value="{{produto.price | mask: 'separator':'.'}}"
 					name="price"
 				/>
 			</mat-form-field>
@@ -25,7 +25,7 @@
 				class="inputImage"
 				type="file"
 				accept="image/*"
-				(change)="onChange($event)"
+				(change)="compress()"
 				id="inputImg"
 				name="image"
 			/>

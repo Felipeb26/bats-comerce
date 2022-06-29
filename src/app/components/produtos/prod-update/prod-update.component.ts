@@ -2,6 +2,7 @@ import { Produtos } from './../produto.model';
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProdutosService } from "./../produtos.service.ts.service";
+import { DataUrl, NgxImageCompressService } from "ngx-image-compress";
 
 @Component({
 	selector: "app-prod-update",
@@ -10,13 +11,13 @@ import { ProdutosService } from "./../produtos.service.ts.service";
 })
 export class ProdUpdateComponent implements OnInit {
 	produto!: Produtos;
-	url: any = "";
+	url: DataUrl = "";
 
 	constructor(
 		private route: Router,
 		private prodService: ProdutosService,
-		private router: ActivatedRoute
-	) {}
+		private router: ActivatedRoute,
+		private imageCompress: NgxImageCompressService) {}
 
 	ngOnInit(): void {
 		const id = this.router.snapshot.paramMap.get("id");
@@ -26,13 +27,26 @@ export class ProdUpdateComponent implements OnInit {
 		});
 	}
 
-	onChange(event: any) {
-		const files = <FileList>event.srcElement.files;
-		const reader = new FileReader();
-		reader.onload = () => {
-			this.url = reader.result as string;
-		};
-		reader.readAsDataURL(files[0]);
+	compress() {
+		return this.imageCompress.uploadMultipleFiles().then(
+			(
+				arrayOfFiles: {
+					image: string;
+					fileName: string;
+					orientation: number;
+				}[]
+			) => {
+				console.table(arrayOfFiles);
+				arrayOfFiles.forEach((img) => {
+					this.imageCompress
+						.compressFile(img.image, img.orientation, 50, 70)
+						.then((newImg) => {
+							this.url = newImg;
+							this.produto.image = newImg;
+						});
+				});
+			}
+		);
 	}
 
 	updateProduto(): void {

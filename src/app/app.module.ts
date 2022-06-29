@@ -33,6 +33,7 @@ import { ProdUpdateComponent } from "./components/produtos/prod-update/prod-upda
 import { ProdDeleteComponent } from "./components/produtos/prod-delete/prod-delete.component";
 import { AuthenticationComponent } from "./components/auth/authentication/authentication.component";
 import { CreateLoginComponent } from "./components/auth/create-login/create-login.component";
+import { NgxMaskModule,IConfig } from 'ngx-mask'
 
 registerLocaleData(localePt);
 
@@ -69,7 +70,8 @@ registerLocaleData(localePt);
 		MatTableModule,
 		MatPaginatorModule,
 		MatSortModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		NgxMaskModule.forRoot(),
 	],
 	providers: [
 		{

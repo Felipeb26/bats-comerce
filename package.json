@@ -7,7 +7,8 @@
     "begin": "ng serve --port 4200",
     "watch": "ng build --watch --configuration development",
     "build": "ng build --base-href https://felipeb26.github.io/bats-comerce/",
-    "db": "json-server db.json --port 3001"
+    "db": "json-server db.json --port 3001",
+    "pages": "ngh --dir dist/bats"
   },
   "private": true,
   "homepage": "https://felipeb26.github.io/bats-comerce/",
@@ -24,6 +25,8 @@
     "@angular/router": "^14.0.0",
     "concurrently": "^7.2.2",
     "express": "^4.18.1",
+    "ngx-image-compress": "^13.1.13",
+    "ngx-mask": "^14.0.3",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

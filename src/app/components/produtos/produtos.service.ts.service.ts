@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
 	providedIn: "root",
 })
 export class ProdutosService {
-	baseUrl =
-		"https://my-json-server.typicode.com/felipeb26/bats-comerce/produtos";
+	// baseUrl =
+	// 	"https://my-json-server.typicode.com/felipeb26/bats-comerce/produtos";
 
-	// baseUrl = "http://localhost:3001/produtos"
+	baseUrl = "http://localhost:3001/produtos"
 	constructor(private snacbar: MatSnackBar, private http: HttpClient) {}
 
 	showMessage(msg: string): void {
@@ -23,7 +23,10 @@ export class ProdutosService {
 	}
 
 	create(produto: Produtos): Observable<Produtos> {
-		return this.http.post<Produtos>(this.baseUrl, produto);
+		return this.http.post<Produtos>(this.baseUrl, produto,{
+			reportProgress: true,
+			observe: 'body'
+		});
 	}
 
 	read(): Observable<Produtos[]> {
@@ -37,7 +40,10 @@ export class ProdutosService {
 
 	update(produto: Produtos): Observable<Produtos> {
 		const url = `${this.baseUrl}/${produto.id}`;
-		return this.http.put<Produtos>(url, produto);
+		return this.http.put<Produtos>(url, produto,{
+			reportProgress:true,
+			observe: 'body'
+		});
 	}
 
 	delete(produto: Produtos): Observable<Produtos> {

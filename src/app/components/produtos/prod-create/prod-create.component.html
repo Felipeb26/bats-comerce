@@ -14,17 +14,23 @@
 			<mat-form-field>
 				<input
 					matInput
+					prefix="$"
 					placeholder="preço (R$)"
 					[(ngModel)]="produto.price"
 					name="price"
-				/>
-			</mat-form-field>
-			<input type="file" accept="image/*" (change)="onChange($event)" id="addImage" />
+					/>
+				</mat-form-field>
+				<input
+				type="file"
+				accept="image/*"
+				(change)="compress()"
+				id="addImage"
+			/>
 			<label class="lblInput" for="addImage">adicione uma imagem</label>
 		</form>
-        <mat-card class="previewCreate">
-            <img [src]="url " alt="">
-        </mat-card>
+		<mat-card class="previewCreate">
+			<img *ngIf="url" [src]="url " alt="" />
+		</mat-card>
 	</div>
 	<button class="btnSaveProduto" mat-raised-button (click)="createProduct()">
 		salvar
