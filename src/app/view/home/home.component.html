@@ -1,8 +1,24 @@
-<mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title">
-        bem vindo!!
-    </mat-card-title>
-    <mat-card-subtitle class="subtitle">
-        sistema para aprender melhor sobre angular
-    </mat-card-subtitle>
-</mat-card>
+<div class="body">
+    <mat-card class="home mat-elevation-z3">
+        <mat-card-title class="title">
+            bem vindo!!
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+            sistema para aprender melhor sobre angular
+        </mat-card-subtitle>
+    </mat-card>
+    <div class="prod">
+        <mat-card class="mat-elevation-z3" *ngFor="let prod of produtos">
+            <mat-card-title>
+                {{prod.nome}}
+                <button mat-raised-button color="primary">
+                    <i class="material-icons">
+                        add
+                    </i>
+                </button>
+            </mat-card-title>
+            <img class="imgProd" src="{{prod.image}}">
+            <mat-card-subtitle>R$ {{prod.price}}</mat-card-subtitle>
+        </mat-card>
+    </div>
+</div>

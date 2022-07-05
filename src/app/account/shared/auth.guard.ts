@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { getCookie, setCookie } from "typescript-cookie";
 import {
 	ActivatedRouteSnapshot,
 	CanActivate,
@@ -16,7 +17,7 @@ export class AuthGuard implements CanActivate {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): boolean {
-		const token = window.localStorage.getItem("token");
+		const token = getCookie("token")
 		if (token) {
 			return true;
 		} else {

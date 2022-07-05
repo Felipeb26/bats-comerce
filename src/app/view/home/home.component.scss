@@ -1,8 +1,44 @@
-.home .title{
+.home {
+    margin: 0 0 2rem 0;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
+
+    & .title {
+        font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
 }
-.home .subtitle{
+
+.home .subtitle {
     font-size: 1.2rem;
+}
+
+.prod {
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 0 0 5rem 0;
+    & mat-card {
+        margin: 0.5rem 1rem 0 1rem;
+        height: auto;
+        box-shadow: 0 0 0.5rem black;
+    }
+    & mat-card-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+        & button {
+            margin: 0 0 0 0.5rem;
+        }
+    }
+}
+
+
+.imgProd {
+    width: 8rem;
+    height: 8rem;
 }
