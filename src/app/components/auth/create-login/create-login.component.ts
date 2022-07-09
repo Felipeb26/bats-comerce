@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateLoginComponent implements OnInit {
 
+  display:string = "none";
   login ={
     email: '',
     senha: ''
@@ -19,6 +20,19 @@ export class CreateLoginComponent implements OnInit {
     private route:Router) { }
 
   ngOnInit(): void {
+    const about = window.document.getElementById("about")
+    if(about != null){
+      about.style.setProperty("display", "none")
+    }
+  }
+
+  showAbout():void{
+    const about = window.document.getElementById("about")
+    if (about!.style.getPropertyValue("display") == this.display) {
+        about!.style.setProperty("display", "block")
+      }else{
+        about!.style.setProperty("display", "none")
+    }
   }
 
   async onSubmit(){

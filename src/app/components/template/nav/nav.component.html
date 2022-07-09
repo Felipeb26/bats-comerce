@@ -14,12 +14,23 @@
             </i>
             bat store
         </a>
-        <a mat-list-item routerLink="/login"
-        (click)="outOrIn()">
-            <i class="material-icons">
-                login
-            </i>
+        <a mat-list-item routerLink="/login">
+        <i class="material-icons">
             login
+        </i>
+        login
+    </a>
+    <a mat-list-item (click)="outOrIn()">
+            <i class="material-icons">
+                logout
+            </i>
+            logout
+        </a>
+        <a mat-list-item routerLink="/about">
+            <i class="material-icons">
+                question_mark
+            </i>
+            about
         </a>
     </mat-nav-list>
     </mat-sidenav>

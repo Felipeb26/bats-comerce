@@ -1,3 +1,5 @@
+import { AboutComponent } from './components/template/about/about.component';
+import { ProdWishlistComponent } from './components/produtos/prod-wishlist/prod-wishlist.component';
 import { AuthenticationComponent } from "./components/auth/authentication/authentication.component";
 import { AuthGuard } from "./account/shared/auth.guard";
 import { ProdDeleteComponent } from "./components/produtos/prod-delete/prod-delete.component";
@@ -35,6 +37,14 @@ const routes: Routes = [
 				path: "produtos/delete/:id",
 				component: ProdDeleteComponent,
 			},
+			{
+				path: "produtos/wish-list",
+				component: ProdWishlistComponent
+			},
+			{
+				path: "about",
+				component: AboutComponent
+			}
 		],
 		canActivate: [AuthGuard],
 	},
@@ -42,8 +52,15 @@ const routes: Routes = [
 		path: "",
 		component: AuthenticationComponent,
 		children: [
-			{ path: "", redirectTo: "login", pathMatch: "full" },
-			{ path: "login", component: CreateLoginComponent },
+			{ 
+				path: "", 
+				redirectTo: "login", 
+				pathMatch: "full" 
+			},
+			{ 
+				path: "login", 
+				component: CreateLoginComponent 
+			}
 		],
 	},
 ];

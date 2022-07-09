@@ -26,6 +26,7 @@ import { ProdReadComponent } from "./components/produtos/prod-read/prod-read.com
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
@@ -33,7 +34,9 @@ import { ProdUpdateComponent } from "./components/produtos/prod-update/prod-upda
 import { ProdDeleteComponent } from "./components/produtos/prod-delete/prod-delete.component";
 import { AuthenticationComponent } from "./components/auth/authentication/authentication.component";
 import { CreateLoginComponent } from "./components/auth/create-login/create-login.component";
-import { NgxMaskModule,IConfig } from 'ngx-mask'
+import { NgxMaskModule,IConfig } from 'ngx-mask';
+import { ProdWishlistComponent } from './components/produtos/prod-wishlist/prod-wishlist.component';
+import { AboutComponent } from './components/template/about/about.component'
 
 registerLocaleData(localePt);
 
@@ -51,6 +54,8 @@ registerLocaleData(localePt);
 		ProdDeleteComponent,
 		CreateLoginComponent,
 		AuthenticationComponent,
+  		ProdWishlistComponent,
+  		AboutComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -72,6 +77,7 @@ registerLocaleData(localePt);
 		MatSortModule,
 		ReactiveFormsModule,
 		NgxMaskModule.forRoot(),
+		FontAwesomeModule
 	],
 	providers: [
 		{
