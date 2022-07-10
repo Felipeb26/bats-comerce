@@ -1,6 +1,7 @@
 import { ProdutosService } from "./../produtos.service.ts.service";
 import { Component, OnInit } from "@angular/core";
 import { Produtos } from "../produto.model";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons"
 
 @Component({
 	selector: "app-prod-read",
@@ -9,6 +10,7 @@ import { Produtos } from "../produto.model";
 })
 export class ProdReadComponent implements OnInit {
 	products: Produtos[] = [];
+	iconAddCart=faCartPlus
 
 	displayedColumns = ["id", "image","nome", "price", "action"];
 

@@ -36,7 +36,7 @@ mat-card{
         & fa-icon:hover{
             color: white;
             background: black;
-            transition: ease-in-out 500ms;
+            transition: 500ms ease-in-out;
         }
     }
     .linkedin{
@@ -50,7 +50,7 @@ mat-card{
         & fa-icon:hover {
             color: white;
             background: blue;
-            transition: ease-in-out 500ms;
+            transition: 500ms ease-in-out;
         }
     }
     .email{
@@ -64,7 +64,7 @@ mat-card{
             & fa-icon:hover {
                 color: white;
                 background: rgb(200, 20, 20);
-                transition: ease-in-out 500ms;
+                transition: 500ms ease-in-out;
             }
     }
 }

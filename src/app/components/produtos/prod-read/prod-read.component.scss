@@ -17,3 +17,13 @@ table{
     cursor: pointer;
     color: #e35e6b;
 }
+
+.add{
+    cursor: pointer;
+    margin: 0 1rem;
+    font-weight: bold;
+    & fa-icon{
+        font-size: 1.5rem;
+        color: rgb(11, 11, 156);
+    }
+}

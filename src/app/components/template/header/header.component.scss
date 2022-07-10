@@ -11,7 +11,7 @@
         max-height: 4rem;
     }
     & .logo:hover{
-        transition: ease-in-out 0.5s;
+        transition: 500ms ease-in-out;
         filter: drop-shadow(0 0 1.5rem var(--myMidRed));
     }
 }

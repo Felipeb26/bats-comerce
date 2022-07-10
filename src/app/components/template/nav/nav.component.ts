@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
 	constructor(
 		private route:Router
 	) {}
-	opened = true;
+	opened = false;
 
 	ngOnInit(): void {
 		window.addEventListener('scroll', () =>{

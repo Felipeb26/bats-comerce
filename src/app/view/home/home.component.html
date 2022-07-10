@@ -11,7 +11,7 @@
         <mat-card class="mat-elevation-z3" *ngFor="let prod of produtos">
             <mat-card-title>
                 {{prod.nome}}
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="primary" (click)="addCart(prod)">
                     <i class="material-icons">
                         add
                     </i>
