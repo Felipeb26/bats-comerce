@@ -5,8 +5,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root{
     --myBlack: #373737;
+    --myBlackHide: #37373780;
     
-    --myWhite: #f5f5f5;
+    --myWhite: #fff9f9;
     
     --myDarkRed: #b53f3f;
     --myMidRed: #c22b14;
@@ -19,5 +20,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 mat-card{
-    box-shadow: 0 0 10px black;
+    border-radius: 0.5rem;
+    border: 1px double var(--myBlackHide);
+    box-shadow: 0 0 10px;
 }

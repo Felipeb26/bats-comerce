@@ -8,7 +8,7 @@
         </mat-card-subtitle>
     </mat-card>
     <div class="prod">
-        <mat-card class="mat-elevation-z3" *ngFor="let prod of produtos">
+        <mat-card class="mat-elevation-z3 cardProd" *ngFor="let prod of produtos">
             <mat-card-title>
                 {{prod.nome}}
                 <button mat-raised-button color="primary" (click)="addCart(prod)">

@@ -9,9 +9,11 @@
             <input matInput class="form-control" type="password" name="senha" id="senha" [(ngModel)]="login.senha" required>
         </mat-form-field>
     </form>
-    <button class="btn-block" mat-raised-button type="submit" [disabled]="form.form.invalid"
-    (click)="onSubmit()">ENTRAR</button>
-    <button class="display" mat-raised-button (click)="showAbout()">VEJA MAIS</button>
+    <div class="card">
+        <button class="btn-block" mat-raised-button type="submit" [disabled]="form.form.invalid"
+        (click)="onSubmit()">ENTRAR</button>
+        <button class="display" mat-raised-button (click)="showAbout()">VEJA MAIS</button>
+    </div>
 </mat-card>
 <div id="about">
     <app-about></app-about>
