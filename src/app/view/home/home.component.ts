@@ -10,14 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 	produtos: Produtos[] = [];
+	produtoList:any
 
 	constructor(
 		private prodService:ProdutosService,
 		private cartService:CartService) {}
 
 	ngOnInit(): void {
-		this.prodService.read().subscribe((products) => {
-			this.produtos = products;
+		this.prodService.read().subscribe({
+			next: (prod) => this.produtos = prod,
+			error: (err) => console.log(err),
+			complete: () => console.log("complete")
 		});
 	}
 

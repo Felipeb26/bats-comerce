@@ -1,3 +1,4 @@
+import { LoaderService } from './../../loader.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from "@angular/core";
 import { getCookie,removeCookie} from "typescript-cookie";
@@ -8,7 +9,8 @@ import { getCookie,removeCookie} from "typescript-cookie";
 })
 export class NavComponent implements OnInit {
 	constructor(
-		private route:Router
+		private route:Router,
+		public load:LoaderService
 	) {}
 	opened = false;
 

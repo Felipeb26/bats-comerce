@@ -38,6 +38,9 @@
         <button mat-raised-button class="closeNav" (click)="opened=!opened">
             <i class="material-icons">menu</i>
         </button>
+        <div *ngIf="load.isLoading | async" class="loadSpinner">
+            <mat-spinner mode="indeterminate" color="warn"></mat-spinner>
+        </div>
         <router-outlet></router-outlet>
     </mat-sidenav-container>
 </mat-sidenav-container> 

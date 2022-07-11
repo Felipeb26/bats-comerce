@@ -19,3 +19,10 @@
     color: white;
     margin: 0 0 0.75rem 0;
 }
+
+.loadSpinner{
+    width: 100%;
+    transform: translate(45%, 50%);
+    position: fixed;
+    z-index: 10;
+}

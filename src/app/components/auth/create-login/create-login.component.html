@@ -10,8 +10,8 @@
         </mat-form-field>
     </form>
     <button class="btn-block" mat-raised-button type="submit" [disabled]="form.form.invalid"
-    (click)="onSubmit()" color="primary">ENTRAR</button>
-    <button class="display" mat-raised-button color="primary" (click)="showAbout()">display</button>
+    (click)="onSubmit()">ENTRAR</button>
+    <button class="display" mat-raised-button (click)="showAbout()">VEJA MAIS</button>
 </mat-card>
 <div id="about">
     <app-about></app-about>
