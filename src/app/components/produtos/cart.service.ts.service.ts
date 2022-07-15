@@ -11,8 +11,8 @@ export class CartService {
 
   constructor() { }
 
-  getProduct():any{
-    return this.produtoList.asObservable
+  getProduct(){
+    return this.produtoList.asObservable();
   }
   setProduct(product: any){
     this.cartItemList.push(...product);
@@ -24,7 +24,7 @@ export class CartService {
     this.getTotalPrice();
     console.log(this.cartItemList)
   }
-  getTotalPrice(){
+  getTotalPrice():any{
     let grandTotal = 0;
     this.cartItemList.map((a:any) =>{
       grandTotal += a.total;

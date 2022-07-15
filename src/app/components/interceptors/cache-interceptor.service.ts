@@ -16,10 +16,12 @@ export class CacheInterceptorService implements HttpInterceptor{
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler):Observable<HttpEvent<any>> {
+      this.load.isLoading.next(true);
       if(req.method != 'GET'){
-        return next.handle(req);
+        return next.handle(req)
       }
       const cacheResponse = this.cacheInterpector.get(req.url);
+      this.load.isLoading.next(false)
       return cacheResponse ? of(cacheResponse): this.sendRequest(req, next);
   }
 
@@ -27,7 +29,6 @@ export class CacheInterceptorService implements HttpInterceptor{
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    this.load.isLoading.next(true);
     return next.handle(req).pipe(
       tap((event) => {
         if (event instanceof HttpResponse) {

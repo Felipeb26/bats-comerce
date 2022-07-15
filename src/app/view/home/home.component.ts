@@ -17,14 +17,19 @@ export class HomeComponent implements OnInit {
 		private cartService:CartService) {}
 
 	ngOnInit(): void {
-		this.prodService.read().subscribe({
-			next: (prod) => this.produtos = prod,
-			error: (err) => console.log(err),
-			complete: () => console.log("complete")
+		this.prodService.read().subscribe( res =>{
+			this.produtos = res;
+			this.produtoList = res;
+			this.produtoList.forEach((a:any) =>{
+				Object.assign(a,{quantidade:1, total:a.price})
+			})
 		});
 	}
 
 	addCart(item:any){
-		this.addCart(item)
+		if(item == null){
+			return;
+		}
+		this.cartService.addCartProduct(item)
 	}
 }

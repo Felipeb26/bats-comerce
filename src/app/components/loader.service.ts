@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoaderService {
 
-  public isLoading:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true)
+  public isLoading:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
   constructor() { }
 }

@@ -32,6 +32,15 @@
             </i>
             about
         </a>
+        <div class="styles">
+            <span class="material-icons night">
+                nightlight
+            </span>
+            <mat-slide-toggle color="warn" (toggleChange)="changeStyle()" [(ngModel)]="click"></mat-slide-toggle>
+            <span class="material-icons day">
+                wb_sunny
+            </span>
+        </div>
     </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-container class="content">

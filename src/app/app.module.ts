@@ -29,6 +29,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
@@ -81,7 +82,8 @@ registerLocaleData(localePt);
 		ReactiveFormsModule,
 		NgxMaskModule.forRoot(),
 		FontAwesomeModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatSlideToggleModule
 	],
 	providers: [
 		{

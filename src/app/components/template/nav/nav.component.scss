@@ -8,6 +8,20 @@
         padding: 0 1rem 0 0;
     }
 }
+.styles{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    color: var(--myWhite);
+    & .day{
+        filter: drop-shadow(0 0 10px rgb(255, 255, 38));
+        text-shadow: 0 0 10px yellow;
+    }
+    & .night{
+        filter: drop-shadow(0 0 10px rgb(73, 71, 71));
+        text-shadow: 0 0 10px;
+    }
+}
 
 .content{
     padding: 1rem;

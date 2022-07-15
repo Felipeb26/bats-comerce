@@ -1,14 +1,72 @@
-mat-card{
-    margin: 0 0 2rem 0;
-    & .title{
-        text-align: right;
-        padding: 0 2rem 0 0;
-    }
+button{
+    background: var(--myDarkRed);
+    color: var(--myWhite);
+    border: 1px solid var(--myBlack);
+    box-shadow: 0 0 10px var(--myBlack);
 }
-
 .center{
     top: 50%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, 0%);
+}
+
+.prodList{
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    & mat-card{
+        background: var(--myBlackHide);
+        color: var(--myWhite);
+        display: flex;
+        flex-direction: column;
+        height: 10rem;
+    }
+    & mat-card-title{
+        text-decoration: underline;
+    }
+    & button{
+        background: var(--myMidRed);
+        color: var(--myWhite);
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+    }
+}
+
+.cardImage{
+    border-radius: 5px;
+    margin: 0 1rem 0 0;
+    flex-grow: 0;
+    align-items: center;
+    justify-items: center;
+    & .image{
+        margin: 10px 0;
+        border-radius: 5px;
+        max-height: 18rem;
+        max-width: 15rem;
+        min-height: 8rem;
+        min-width: 8rem;
+    }
+}
+
+.cardContent{
+    margin: 0 0 0 1rem;
+    display: flex;
+    flex-grow: 4;
+    flex-direction: row;flex-wrap: wrap;
+    color: var(--myWhite);
+    & mat-card{
+        border-radius: 0;
+        width: 100%;
+        & input{
+            font-size: 2rem;
+            color: var(--myWhite);
+        }
+    }
+    & .action{
+        justify-content: center;
+        align-items: center;
+    }
 }
